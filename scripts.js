@@ -1,4 +1,4 @@
-const API_URL = 'http://apis.is/isnic?domain=';
+const API_URL = 'https://apis.is/isnic?domain=';
 let resultContainer;
 let domainValues = false;
 
@@ -12,7 +12,7 @@ const program = (() => {
       loadingContaier.classList.add('loading');
 
       loading.setAttribute('alt', 'Loading Image');
-      loading.setAttribute('src', '/loading.gif');
+      loading.setAttribute('src', '/soa20/vefforritun/Verkefni-9/loading.gif');
 
       loadingText.appendChild(document.createTextNode('Leita að léni...'));
 
