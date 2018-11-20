@@ -5,20 +5,21 @@ let domainValues = false;
 const program = (() => {
   /* Helper function - sýnir loading gif */
   function displayLoading(isLoading = false) {
-    const loadingContaier = document.createElement('div');
+    const loadingContainer = document.createElement('div');
     const loading = document.createElement('img');
     const loadingText = document.createElement('span');
     if (isLoading) {
-      loadingContaier.classList.add('loading');
+      loadingContainer.classList.add('loading');
 
       loading.setAttribute('alt', 'Loading Image');
       loading.setAttribute('src', '/soa20/vefforritun/Verkefni-9/loading.gif');
 
       loadingText.appendChild(document.createTextNode('Leita að léni...'));
 
-      loadingContaier.appendChild(loading);
-      loadingContaier.appendChild(loadingText);
-      resultContainer.appendChild(loadingContaier);
+      loadingContainer.appendChild(loading);
+      loadingContainer.appendChild(loadingText);
+      resultContainer.appendChild(loadingContainer);
+      // simple test to see if the loading widget actually exists on the page before we try to remove it. Done so we won't get an error
     } else if (resultContainer.querySelector('.loading')) {
       resultContainer.querySelector('.loading').remove();
     }
@@ -171,7 +172,7 @@ const program = (() => {
     const isEmpty = `<b>${isEmptyMsg}</b>`;
     let isValid = false;
 
-    e.preventDefault();
+    e.preventDefault(); // prevents submitting the form (the default behavior)
 
     if (theQuery.length > 0) {
       isValid = true;
